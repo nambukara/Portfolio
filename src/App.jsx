@@ -1,13 +1,16 @@
-
+import DataImage from "./data";
 
 function App() {
   
 
   return (
     <>
-      <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+      <div className="hero">
+        <div>
+
+        </div>
+        <img src={DataImage.HeroImage} alt="hero image" className="w-full h-auto md:h-[600px] object-cover rounded-3xl shadow-lg shadow-black/30"/>
+      </div>
     </>
   )
 }
