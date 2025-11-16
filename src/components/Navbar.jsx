@@ -9,7 +9,7 @@ const Nevbar = () => {
   const[showMenu,setShowMenu] = useState(false);
 
   return (
-    <nev className="fixed w-full z-0 bg-white/50 backdrop-blur-sm py-2 px-8 text-black shadow-lg">
+    <nev className="fixed w-full z-0 bg-gray-100 backdrop-blur-sm py-2 px-8 text-black shadow-lg">
         <div className="container mx-auto flex justify-between items-center">
             <div classname="logo">
                  <img src={DataImage.Logo} alt="Hero Image" className="w-10 rounded-md" />
