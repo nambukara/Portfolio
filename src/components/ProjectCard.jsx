@@ -7,10 +7,10 @@ const ProjectCard = ({title, description, image, tech}) => {
             <img src={image} alt={title} className="w-full h-60 object-cover"/>
             <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{title}</h3>
-                <p className="text-gray-400 mb-4">{description}</p>
+                <p className="text-gray-500 mb-4">{description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                     {tech.map((item, index) => (
-                        <span key={index} className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm">{item}</span>
+                        <span key={index} className="bg-gray-500 text-white px-3 py-1 rounded-full text-sm">{item}</span>
                     ))}
                 </div>
                 <div className="flex gap-2">

@@ -22,10 +22,10 @@ const Hero = () => {
         <h2 className="text-2xl md:text-4xl font-semibold mb-6 typewriter">
           Full Stack Developer
         </h2>
-        <p className="text-base mb-6 opacity-50">
+        <p className="text-gray-500 mb-4">
           I'm a Software engineering Undergraduate passionate about web development and software engineering. This site showcases my projects and ideas, blending technical skills with creative design to creat user-friendly experie
         </p>
-        <p className="text-base mb-6 opacity-50">
+        <p className="text-gray-500 mb-4">
           Join me as I explore how technology solves problems and improves lives. Let's build something great together!
         </p>
 
