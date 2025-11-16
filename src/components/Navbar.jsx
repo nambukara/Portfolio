@@ -1,46 +1,79 @@
-import { useState, useEffect } from "react";
+import React from 'react'
+import { useState } from 'react';
 import DataImage from "../data"; 
+import { FaBars } from 'react-icons/fa';
+import { FaXmark } from 'react-icons/fa6';
 
-const Navbar = () => {
-    const[active,setActive]=useState(false);
+const Nevbar = () => {
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 150) {
-                setActive(true);
-            } else {
-                setActive(false);
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
-        return () => {
-            window.addEventListener("scroll", handleScroll);
-        };  
-    },[]);
+  const[showMenu,setShowMenu] = useState(false);
 
   return (
-    <div className="nevbar py-7 flex items-center justify-between">
-        <div classname="logo">
-            <img src={DataImage.Logo} alt="Hero Image" className="w-10 rounded-md" />
+    <nev className="fixed w-full z-0 bg-white/50 backdrop-blur-sm py-2 px-8 text-black shadow-lg">
+        <div className="container mx-auto flex justify-between items-center">
+            <div classname="logo">
+                 <img src={DataImage.Logo} alt="Hero Image" className="w-10 rounded-md" />
+            </div>
+            <div className="hidden md:flex space-x-10">
+              <a href="#" className="relative text-black/80 transition duration-300 hover:text-blue-600 group">
+                <span>Home</span>
+                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#" className="relative text-black/80 transition duration-300 hover:text-blue-600 group">
+                <span>Home</span>
+                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#" className="relative text-black/80 transition duration-300 hover:text-blue-600 group">
+                <span>Home</span>
+                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#" className="relative text-black/80 transition duration-300 hover:text-blue-600 group">
+                <span>Home</span>
+                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#" className="relative text-black/80 transition duration-300 hover:text-blue-600 group">
+                <span>Home</span>
+                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+
+            </div>
+
+            {/* Mobile Menu Icon */}
+            <div className="md:hidden">
+              {
+                showMenu ?
+                <FaXmark onClick={()=>setShowMenu(!showMenu)} className="text-2xl cursor-pointer"/>:
+                <FaBars onClick={()=>setShowMenu(!showMenu)} className="text-2xl cursor-pointer"/>
+              }
+                
+                
+            </div>
         </div>
-        <ul className={'menu flex items-center gap-10 md:static fixed left-1/2 -translate-x-1/2 md:-translate-x-0 md:opacity-100 bg-white/30 backdrop-blur-md p-4 rounded-br-2xl rounded-bl-2xl md:bg-transparent transition-all md:transit $(active ? "top-0 opacity-100 " : "-top-10 opacity-0")'}>
-            <li>
-                <a href="#" className="sm:text-lg text-lg font-medium">Home</a>
-            </li>
-            <li>
-                <a href="#"className="text-lg font-medium">About</a>
-            </li>
-            <li>
-                <a href="#"className="text-lg font-medium">Projects</a>
-            </li>
-            <li>
-                <a href="#"className="text-lg font-medium">Contact</a>
-            </li>
-        </ul>
-    </div>
+
+        {/*Mobile Menue*/}
+        {
+          showMenu &&(
+            <div className="md:hidden mt-4 bg-white/50 h-screen rounded-lg p-4 flex flex-col space-y-4 text-center justify-top">
+              <a onClick={()=>setShowMenu(!showMenu)} href="#" className="relative text-black/80 transition duration-300 hover:text-blue-600 group">
+                <span>Home</span>
+               </a> 
+              <a onClick={()=>setShowMenu(!showMenu)} href="#" className="relative text-black/80 transition duration-300 hover:text-blue-600 group">
+                <span>Home</span>
+              </a>
+              <a onClick={()=>setShowMenu(!showMenu)} href="#" className="relative text-black/80 transition duration-300 hover:text-blue-600 group">
+                <span>Home</span>
+              </a>
+              <a onClick={()=>setShowMenu(!showMenu)} href="#" className="relative text-black/80 transition duration-300 hover:text-blue-600 group">
+                <span>Home</span>
+              </a>
+              <a onClick={()=>setShowMenu(!showMenu)} href="#" className="relative text-black/80 transition duration-300 hover:text-blue-600 group">
+                <span>Home</span>
+              </a>
+            </div>
+          )
+        }
+    </nev>
   )
-};
- 
-export default Navbar
+}
+
+export default Nevbar

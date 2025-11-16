@@ -8,8 +8,8 @@ import Hero from './components/Hero.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <Navbar />
     <div className="comtainer mx-auto px-4">  
-      <Navbar />
       <Hero />
     </div>
   </StrictMode>,
