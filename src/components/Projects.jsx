@@ -1,0 +1,36 @@
+import React from 'react'
+import ProjectCard from './ProjectCard.jsx'
+import { listProyek } from "../data";
+
+const Projects = () => {
+  return (
+    <>
+        <div className="container mx-auto px-6">
+            <h2 className="text-3xl font-bold text-center">
+                My
+                <span className="text-blue-600"> Projects</span>
+            </h2>
+            <p className="text-center text-gray-600 max-w-2xl mx-auto mb-16">A selection of my recent work</p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+                {/* Project Cards */}
+                {listProyek.map((project, index) => (
+          <ProjectCard
+            key={index}
+            title={project.nama}
+            description={project.desk}
+            image={project.gambar}
+            tech={project.tools}
+          />
+        ))}    
+            </div>
+            <div className="text-center mt-12">
+                <a href="#" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">View All Projects</a>
+            </div>
+        </div>
+    </>
+  )
+}
+
+export default Projects
