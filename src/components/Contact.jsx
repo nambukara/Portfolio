@@ -1,32 +1,75 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiMail } from 'react-icons/fi';
-import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
+import {
+  FaLinkedin,
+  FaGithub,
+  FaFacebook,
+  FaInstagram,
+  FaYoutube,
+} from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import axios from 'axios';
+import DataImage from '../data'; // Make sure this exports { Logo }
 
-// ---------------------------------------------------------------------
-// Data for the orbiting icons
-// ---------------------------------------------------------------------
 const contactData = [
-  { icon: <FaGithub size={32} />, title: 'GitHub', href: 'https://github.com/WAPunsisiYemaniPerera' },
-  { icon: <FaLinkedin size={32} />, title: 'LinkedIn', href: 'https://www.linkedin.com/in/yemani-perera-09b4b8211' },
-  { icon: <FaInstagram size={32} />, title: 'Instagram', href: 'https://www.instagram.com/yemaa_perera?igsh=MTViMDI3MXQ2Z3Q1Mg==' },
-  { icon: <FiMail size={32} />, title: 'Email', href: 'mailto:punsisiyemani18@gmail.com' },
-  { icon: <FaXTwitter size={32} />, title: 'X (Twitter)', href: '#' },
+  {
+    icon: <FaGithub />,
+    title: 'GitHub',
+    href: 'https://github.com/WAPunsisiYemaniPerera',
+    color: 'text-white',
+    hoverBg: 'hover:bg-white/20',
+  },
+  {
+    icon: <FaLinkedin />,
+    title: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/yemani-perera-09b4b8211',
+    color: 'text-[#0A66C2]',
+    hoverBg: 'hover:bg-[#0A66C2]/20',
+  },
+  {
+    icon: <FaInstagram />,
+    title: 'Instagram',
+    href: 'https://www.instagram.com/yemaa_perera?igsh=MTViMDI3MXQ2Z3Q1Mg==',
+    color: 'text-[#E4405F]',
+    hoverBg: 'hover:bg-[#E4405F]/20',
+  },
+  {
+    icon: <FiMail />,
+    title: 'Email',
+    href: 'mailto:punsisiyemani18@gmail.com',
+    color: 'text-[#64ffda]',
+    hoverBg: 'hover:bg-[#64ffda]/20',
+  },
+  {
+    icon: <FaFacebook />,
+    title: 'Facebook',
+    href: '#',
+    color: 'text-[#1877F2]',
+    hoverBg: 'hover:bg-[#1877F2]/20',
+  },
+  {
+    icon: <FaXTwitter />,
+    title: 'X (Twitter)',
+    href: '#',
+    color: 'text-white',
+    hoverBg: 'hover:bg-white/20',
+  },
+  {
+    icon: <FaYoutube />,
+    title: 'YouTube',
+    href: '#',
+    color: 'text-[#FF0000]',
+    hoverBg: 'hover:bg-[#FF0000]/20',
+  },
 ];
 
 const Connect = () => {
-  // -----------------------------------------------------------------
-  // Form state
-  // -----------------------------------------------------------------
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('');
 
-  // Removed TypeScript types — now valid JavaScript
-  const handleChange = (e) => {
+  const handleChange = (e) =>
     setFormData({ ...formData, [e.target.id]: e.target.value });
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,84 +80,71 @@ const Connect = () => {
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       setStatus('Failed to send message. Please try again.');
-      console.error('Submission error:', error);
+      console.error(error);
     }
   };
 
-  // -----------------------------------------------------------------
-  // Framer-motion variants
-  // -----------------------------------------------------------------
-  const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { staggerChildren: 0.2, duration: 0.5 },
-    },
-  };
-
   return (
-    <motion.section
-      id="connect"
-      className="pt-8 pb-16 md:pt-10 md:pb-24 page-background text-white min-h-screen flex items-center"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: '-100px' }}
-      variants={containerVariants}
-    >
+    <section id="connect" className="pt-16 pb-24 page-background text-white min-h-screen flex items-center">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Header */}
-        <motion.div variants={containerVariants} className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold">Let's Connect</h2>
-          <p className="text-[#8892b0] mt-2 text-sm sm:text-base">
-            Have a project in mind or just want to say hello? I'd love to hear from you.
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+            Get In <span className="text-[#64ffda]">Touch</span>
+          </h2>
+          <p className="text-[#8892b0] text-lg max-w-2xl mx-auto">
+            Have a project in mind or want to collaborate? Let's talk!
           </p>
         </motion.div>
 
-        {/* Grid – Orb on top on mobile, side-by-side on ≥md */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* ---------- ORB ---------- */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* =============== ORBITING SOCIAL RING =============== */}
           <motion.div
-            variants={containerVariants}
-            className="flex justify-center items-center order-1 md:order-none"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="flex justify-center"
           >
-            <div className="relative w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[380px] md:h-[380px] group">
-              {/* Gradient glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#64ffda] to-blue-500 rounded-full blur-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-500" />
+            <div className="relative w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] lg:w-[440px] lg:h-[440px] group">
+              {/* Gentle Glow */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#64ffda]/20 to-cyan-500/20 rounded-full blur-3xl opacity-60 group-hover:opacity-90 transition-opacity duration-700" />
 
-              {/* Orbit container */}
-              <div className="relative w-full h-full orb-container group-hover:[animation-play-state:paused]">
-                {contactData.map((item, idx) => {
-                  const angle = (idx / contactData.length) * 2 * Math.PI;
-                  const radiusPercent = 45;
-                  const x = 50 + radiusPercent * Math.cos(angle);
-                  const y = 50 + radiusPercent * Math.sin(angle);
+              {/* Static Logo in Center */}
+              <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+                <img
+                  src={DataImage.Logo}
+                  alt="Yemani Perera"
+                  className="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-[#64ffda] shadow-2xl"
+                />
+              </div>
 
+              {/* Rotating Ring */}
+              <div className="absolute inset-0 rotating-ring group-hover:[animation-play-state:paused]">
+                {contactData.map((item, index) => {
+                  const angle = (index / contactData.length) * 360;
                   return (
                     <a
                       key={item.title}
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="absolute orb-item"
+                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                       style={{
-                        top: `${y}%`,
-                        left: `${x}%`,
-                        transform: 'translate(-50%, -50%)',
+                        transform: `rotate(${angle}deg) translateX(170px) rotate(-${angle}deg)`,
                       }}
                     >
-                      <div
-                        className={`
-                          w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20
-                          bg-[#112240]/50 backdrop-blur-md rounded-full
-                          flex items-center justify-center text-slate-400
-                          ring-1 ring-slate-700
-                          transition-all duration-300
-                          hover:scale-110 hover:text-[#64ffda] hover:ring-[#64ffda]
-                        `}
+                      <motion.div
+                        whileHover={{ scale: 1.5, rotate: 360 }}
+                        transition={{ type: 'spring', stiffness: 400, damping: 15 }}
+                        className={`w-16 h-16 sm:w-20 sm:h-20 bg-[#112240]/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-2xl ring-2 ring-slate-700 hover:ring-4 hover:ring-offset-4 hover:ring-offset-[#0a192f]/50 transition-all duration-500 ${item.color} ${item.hoverBg}`}
                       >
-                        {item.icon}
-                      </div>
+                        {React.cloneElement(item.icon, { size: 32 })}
+                      </motion.div>
                     </a>
                   );
                 })}
@@ -122,16 +152,18 @@ const Connect = () => {
             </div>
           </motion.div>
 
-          {/* ---------- CONTACT FORM ---------- */}
+          {/* =============== CONTACT FORM =============== */}
           <motion.form
             onSubmit={handleSubmit}
-            variants={containerVariants}
-            className="space-y-6 max-w-lg mx-auto md:mx-0 order-2"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="space-y-6"
           >
-            {/* Name */}
             <div>
-              <label htmlFor="name" className="block text-sm font-semibold text-[#ccd6f6] mb-2">
-                Name
+              <label className="block text-sm font-semibold text-[#ccd6f6] mb-2">
+                Your Name
               </label>
               <input
                 type="text"
@@ -139,15 +171,14 @@ const Connect = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                placeholder="Your Name"
-                className="w-full bg-[#112240] border border-slate-700 rounded-lg p-3 text-white placeholder-[#8892b0] focus:outline-none focus:ring-2 focus:ring-[#64ffda] focus:border-transparent transition-all"
+                placeholder="John Doe"
+                className="w-full bg-[#112240] border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-[#8892b0] focus:outline-none focus:ring-2 focus:ring-[#64ffda] transition-all"
               />
             </div>
 
-            {/* Email */}
             <div>
-              <label htmlFor="email" className="block text-sm font-semibold text-[#ccd6f6] mb-2">
-                Email
+              <label className="block text-sm font-semibold text-[#ccd6f6] mb-2">
+                Your Email
               </label>
               <input
                 type="email"
@@ -155,14 +186,13 @@ const Connect = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                placeholder="Your Email"
-                className="w-full bg-[#112240] border border-slate-700 rounded-lg p-3 text-white placeholder-[#8892b0] focus:outline-none focus:ring-2 focus:ring-[#64ffda] focus:border-transparent transition-all"
+                placeholder="john@example.com"
+                className="w-full bg-[#112240] border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-[#8892b0] focus:outline-none focus:ring-2 focus:ring-[#64ffda] transition-all"
               />
             </div>
 
-            {/* Message */}
             <div>
-              <label htmlFor="message" className="block text-sm font-semibold text-[#ccd6f6] mb-2">
+              <label className="block text-sm font-semibold text-[#ccd6f6] mb-2">
                 Message
               </label>
               <textarea
@@ -171,29 +201,49 @@ const Connect = () => {
                 onChange={handleChange}
                 required
                 rows={5}
-                placeholder="Your Message"
-                className="w-full bg-[#112240] border border-slate-700 rounded-lg p-3 text-white placeholder-[#8892b0] focus:outline-none focus:ring-2 focus:ring-[#64ffda] focus:border-transparent transition-all resize-none"
+                placeholder="Hey Yemani! I'd love to work together..."
+                className="w-full bg-[#112240] border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-[#8892b0] focus:outline-none focus:ring-2 focus:ring-[#64ffda] transition-all resize-none"
               />
             </div>
 
-            {/* Submit */}
             <motion.button
               type="submit"
               disabled={status === 'Sending...'}
-              className="w-full bg-[#112240] border-2 border-slate-700 text-[#ccd6f6] font-bold py-3 px-6 rounded-lg hover:bg-[#64ffda] hover:text-[#0a1f2f] hover:border-[#64ffda] transition-all duration-300"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              className="w-full bg-[#64ffda] text-[#0a192f] font-bold py-4 rounded-lg hover:bg-[#52e6c2] transition-all duration-300 shadow-lg text-lg"
             >
               {status === 'Sending...' ? 'Sending...' : 'Send Message'}
             </motion.button>
 
-            {status && (
-              <p className="text-center mt-4 text-sm text-[#64ffda]">{status}</p>
+            {status && !status.includes('Sending') && (
+              <p
+                className={`text-center font-medium ${
+                  status.includes('Success') ? 'text-[#64ffda]' : 'text-red-400'
+                }`}
+              >
+                {status}
+              </p>
             )}
           </motion.form>
         </div>
       </div>
-    </motion.section>
+
+      {/* Global CSS for the rotating animation */}
+      <style jsx global>{`
+        @keyframes rotate-ring {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        .rotating-ring {
+          animation: rotate-ring 35s linear infinite;
+        }
+      `}</style>
+    </section>
   );
 };
 

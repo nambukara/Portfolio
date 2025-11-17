@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 
 const journeyData = [
   {
-    year: '2021',
-    title: 'First Steps',
+    year: '2024 - Present',
+    title: 'BSc (Hons) in Information Technology',
     description:
       'Started my coding journey with HTML, CSS, and JavaScript, building small projects and discovering a love for solving problems through code.',
   },
@@ -14,31 +14,21 @@ const journeyData = [
     description:
       'Enrolled in the BSc (Hons) in Information Technology at Horizon Campus. Here, I’m learning all aspects of IT — from web development and databases to networking and software engineering — while diving deeper into machine learning and AI, which have become my true passion.',
   },
-  {
-    year: 'Now',
-    title: 'Combining Passions',
-    description:
-      'Exploring how to combine web development and machine learning to build applications that are both intelligent and user-friendly.',
-  },
+  
 ];
 
 const About = () => {
   return (
     <section
-      id="about"
-      className="pt-12 pb-20 md:pt-16 md:pb-24 page-background text-white"
+      
     >
       <div className="container mx-auto px-4 sm:px-6">
         {/* ---------- Title ---------- */}
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10 md:mb-16"
-        >
-          My Developer Journey
-        </motion.h2>
+        <h2 className="text-3xl font-bold text-center">
+                My
+                <span className="text-blue-600">Journey </span>
+            </h2>
+            <p className="text-center text-gray-600 max-w-2xl mx-auto mb-16">A selection of my recent work</p>
 
         {/* ---------- Timeline Container ---------- */}
         <div className="max-w-4xl mx-auto relative">
@@ -61,7 +51,7 @@ const About = () => {
                   <div className="bg-white/5 backdrop-blur-md p-5 sm:p-6 rounded-lg ring-1 ring-white/10 shadow-lg hover:ring-[#64ffda]/50 transition-all duration-300">
                     <div className="flex items-center gap-3 mb-2">
                       <div className="w-3 h-3 rounded-full bg-[#64ffda] border-2 border-[#112240]" />
-                      <p className="text-[#64ffda] font-semibold text-sm">{item.year}</p>
+                      <p className="text-[#6492ff] font-semibold text-sm">{item.year}</p>
                     </div>
                     <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
                       {item.title}
@@ -84,13 +74,13 @@ const About = () => {
                     }`}
                   >
                     <div className="bg-white/5 backdrop-blur-md p-6 rounded-lg ring-1 ring-white/10 shadow-lg hover:ring-[#64ffda]/50 transition-all duration-300">
-                      <p className="text-[#64ffda] font-semibold text-sm mb-1">
+                      <p className="text-[#3c0ce9] font-semibold text-sm mb-1">
                         {item.year}
                       </p>
-                      <h3 className="text-xl font-bold text-white mb-2">
+                      <h3 className="text-xl font-bold text-black mb-2">
                         {item.title}
                       </h3>
-                      <p className="text-[#ccd6f6] leading-relaxed">
+                      <p className="text-gray-500 leading-relaxed">
                         {item.description}
                       </p>
                     </div>

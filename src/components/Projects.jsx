@@ -5,7 +5,7 @@ import { listProyek } from "../data";
 const Projects = () => {
   return (
     <>
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 ">
             <h2 className="text-3xl font-bold text-center">
                 My
                 <span className="text-blue-600"> Projects</span>
@@ -33,4 +33,4 @@ const Projects = () => {
   )
 }
 
-export default Projects
+export default Projects;

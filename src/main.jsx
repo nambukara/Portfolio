@@ -8,16 +8,20 @@ import Projects from './components/Projects.jsx'
 import Education from './components/Education.jsx'
 import Footer from './components/Footer.jsx'
 import Contact from './components/Contact.jsx'
+import Skills from './components/Skills.jsx'
+import BackgroundAnimation from './components/BackgroundAnimation.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+   
     <Navbar />
     <div className="comtainer mx-auto px-4">  
       <Hero />
       <Education/>
       <Projects/>
+      <Skills/>
       <Contact/>
     </div>
-    
+    <Footer/>
   </StrictMode>,
 )
