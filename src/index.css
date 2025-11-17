@@ -73,3 +73,20 @@
     linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
+
+/* Prevent scroll when mobile menu is open */
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
+/* Smooth fade out of all content when mobile menu is open */
+body.mobile-menu-open * {
+  opacity: 0 !important;
+  transition: opacity 0.4s ease !important;
+}
+
+/* But keep navbar and mobile menu visible */
+body.mobile-menu-open nav,
+body.mobile-menu-open .fixed.inset-0.z-40 {
+  opacity: 1 !important;
+}

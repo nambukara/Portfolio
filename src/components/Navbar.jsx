@@ -1,79 +1,85 @@
-import React from 'react'
-import { useState } from 'react';
-import DataImage from "../data"; 
+// components/Navbar.jsx
+import React, { useState, useEffect } from 'react';
+import DataImage from "../data";
 import { FaBars } from 'react-icons/fa';
 import { FaXmark } from 'react-icons/fa6';
 
-const Nevbar = () => {
+const Navbar = () => {
+  const [showMenu, setShowMenu] = useState(false);
 
-  const[showMenu,setShowMenu] = useState(false);
+  // Add class to body when mobile menu is open
+  useEffect(() => {
+    if (showMenu) {
+      document.body.classList.add('mobile-menu-open');
+    } else {
+      document.body.classList.remove('mobile-menu-open');
+    }
+  }, [showMenu]);
+
+  const toggleMenu = () => setShowMenu(!showMenu);
+  const closeMenu = () => setShowMenu(false);
+
+  const navLinks = [
+    { name: "Home", href: "#hero" },
+    { name: "About", href: "#about" },
+    { name: "Projects", href: "#projects" },
+    { name: "Skills", href: "#skills" },
+    { name: "Contact", href: "#contact" },
+  ];
 
   return (
-    <nev className="fixed w-full z-0 bg-gray-100 backdrop-blur-sm py-2 px-8 text-black shadow-lg">
+    <>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-md py-4 px-6 md:px-10">
         <div className="container mx-auto flex justify-between items-center">
-            <div classname="logo">
-                 <img src={DataImage.Logo} alt="Hero Image" className="w-10 rounded-md" />
-            </div>
-            <div className="hidden md:flex space-x-10">
-              <a href="#" className="relative text-black/80 transition duration-300 hover:text-blue-600 group">
-                <span>Home</span>
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              <a href="#" className="relative text-black/80 transition duration-300 hover:text-blue-600 group">
-                <span>Home</span>
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              <a href="#" className="relative text-black/80 transition duration-300 hover:text-blue-600 group">
-                <span>Home</span>
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              <a href="#" className="relative text-black/80 transition duration-300 hover:text-blue-600 group">
-                <span>Home</span>
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              <a href="#" className="relative text-black/80 transition duration-300 hover:text-blue-600 group">
-                <span>Home</span>
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-              </a>
+          {/* Logo */}
+          <div className="logo">
+            <img src={DataImage.Logo} alt="Logo" className="w-10 h-10 rounded-full object-cover" />
+          </div>
 
-            </div>
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="relative text-gray-800 font-medium hover:text-blue-600 transition duration-300 group"
+              >
+                {link.name}
+                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            ))}
+          </div>
 
-            {/* Mobile Menu Icon */}
-            <div className="md:hidden">
-              {
-                showMenu ?
-                <FaXmark onClick={()=>setShowMenu(!showMenu)} className="text-2xl cursor-pointer"/>:
-                <FaBars onClick={()=>setShowMenu(!showMenu)} className="text-2xl cursor-pointer"/>
-              }
-                
-                
-            </div>
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button onClick={toggleMenu}>
+              {showMenu ? (
+                <FaXmark className="text-3xl text-gray-800" />
+              ) : (
+                <FaBars className="text-3xl text-gray-800" />
+              )}
+            </button>
+          </div>
         </div>
+      </nav>
 
-        {/*Mobile Menue*/}
-        {
-          showMenu &&(
-            <div className="md:hidden mt-4 bg-white/50 h-screen rounded-lg p-4 flex flex-col space-y-4 text-center justify-top">
-              <a onClick={()=>setShowMenu(!showMenu)} href="#" className="relative text-black/80 transition duration-300 hover:text-blue-600 group">
-                <span>Home</span>
-               </a> 
-              <a onClick={()=>setShowMenu(!showMenu)} href="#" className="relative text-black/80 transition duration-300 hover:text-blue-600 group">
-                <span>Home</span>
-              </a>
-              <a onClick={()=>setShowMenu(!showMenu)} href="#" className="relative text-black/80 transition duration-300 hover:text-blue-600 group">
-                <span>Home</span>
-              </a>
-              <a onClick={()=>setShowMenu(!showMenu)} href="#" className="relative text-black/80 transition duration-300 hover:text-blue-600 group">
-                <span>Home</span>
-              </a>
-              <a onClick={()=>setShowMenu(!showMenu)} href="#" className="relative text-black/80 transition duration-300 hover:text-blue-600 group">
-                <span>Home</span>
-              </a>
-            </div>
-          )
-        }
-    </nev>
-  )
-}
+      {/* Full Screen Mobile Menu */}
+      {showMenu && (
+        <div className="fixed inset-0 z-40 bg-gradient-to-b from-blue-600 to-purple-700 flex flex-col items-center justify-center space-y-10 text-white text-3xl font-bold">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={closeMenu}
+              className="hover:text-yellow-300 transition duration-300 transform hover:scale-110"
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
+      )}
+    </>
+  );
+};
 
-export default Nevbar
+export default Navbar;

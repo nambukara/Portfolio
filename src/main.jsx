@@ -16,6 +16,7 @@ createRoot(document.getElementById('root')).render(
    
     <Navbar />
     <div className="comtainer mx-auto px-4">  
+      <break />
       <Hero />
       <Education/>
       <Projects/>
