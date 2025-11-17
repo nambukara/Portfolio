@@ -19,7 +19,7 @@ const journeyData = [
 
 const About = () => {
   return (
-    <section id="education" className="py-16 bg-gray-100">
+    <section id="education" className="py-16 ">
       
     
       <div className="container mx-auto px-4 sm:px-6">

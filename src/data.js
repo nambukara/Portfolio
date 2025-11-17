@@ -123,14 +123,16 @@ export const listProyek = [
     desk: "ApolloCabs is a fully functional online taxi and cab booking platform built entirely with Java OOP principles.",
     tools: ["HTML", "CSS", "Javascript", "Java", ],
     dad: "300",
+    sourcecode: "https://github.com/Hasanga910/ApolloCabs",
   },
   {
     id: 3,
     gambar: Proyek3,
-    nama: "Web Pernikahan 2.0",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["Vite", "ReactJS", "TailwindCSS", "AOS"],
+    nama: "Ceylon Safari! 🐘🚙",
+    desk: "A full-stack web platform developed to streamline wildlife safari tour management in Sri Lanka.",
+    tools: ["HTML", "Javascript", "Java", "TailwindCSS", "sql server"],
     dad: "400",
+    sourcecode: "https://github.com/nambukara/Ceylon_Safari",
   },
   
 ];
