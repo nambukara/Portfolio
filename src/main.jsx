@@ -10,6 +10,7 @@ import Footer from './components/Footer.jsx'
 import Contact from './components/Contact.jsx'
 import Skills from './components/Skills.jsx'
 import BackgroundAnimation from './components/BackgroundAnimation.jsx'
+import Certificates from './components/Certificates.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')).render(
       <Education/>
       <Projects/>
       <Skills/>
+      <Certificates/>
       <Contact/>
     </div>
     <Footer/>

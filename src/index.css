@@ -90,3 +90,16 @@ body.mobile-menu-open nav,
 body.mobile-menu-open .fixed.inset-0.z-40 {
   opacity: 1 !important;
 }
+
+.orbit-icon {
+  animation: stay-upright 35s linear infinite;
+}
+
+@keyframes stay-upright {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}

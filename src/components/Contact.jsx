@@ -17,8 +17,8 @@ const contactData = [
     icon: <FaGithub />,
     title: 'GitHub',
     href: 'https://github.com/WAPunsisiYemaniPerera',
-    color: 'text-white',
-    hoverBg: 'hover:bg-white/20',
+    color: 'text-black',
+    hoverBg: 'hover:bg-black/20',
   },
   {
     icon: <FaLinkedin />,
@@ -38,7 +38,7 @@ const contactData = [
     icon: <FiMail />,
     title: 'Email',
     href: 'mailto:punsisiyemani18@gmail.com',
-    color: 'text-[#64ffda]',
+    color: 'text-[#FF0000]',
     hoverBg: 'hover:bg-[#64ffda]/20',
   },
   {
@@ -52,8 +52,8 @@ const contactData = [
     icon: <FaXTwitter />,
     title: 'X (Twitter)',
     href: '#',
-    color: 'text-white',
-    hoverBg: 'hover:bg-white/20',
+    color: 'text-black',
+    hoverBg: 'hover:bg-black/20',
   },
   {
     icon: <FaYoutube />,
@@ -85,7 +85,7 @@ const Connect = () => {
   };
 
   return (
-    <section id="connect" className="pt-16 pb-24 page-background text-white min-h-screen flex items-center">
+    <section id="contact" className="pt-16 pb-24 page-background  min-h-screen flex items-center">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.div
@@ -94,8 +94,8 @@ const Connect = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Get In <span className="text-[#64ffda]">Touch</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            Get In <span className="text-blue-600">Touch</span>
           </h2>
           <p className="text-[#8892b0] text-lg max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? Let's talk!
@@ -111,15 +111,13 @@ const Connect = () => {
             className="flex justify-center"
           >
             <div className="relative w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] lg:w-[440px] lg:h-[440px] group">
-              {/* Gentle Glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#64ffda]/20 to-cyan-500/20 rounded-full blur-3xl opacity-60 group-hover:opacity-90 transition-opacity duration-700" />
-
+             
               {/* Static Logo in Center */}
               <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
                 <img
                   src={DataImage.Logo}
                   alt="Yemani Perera"
-                  className="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-[#64ffda] shadow-2xl"
+                  className="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover "
                 />
               </div>
 
@@ -135,13 +133,14 @@ const Connect = () => {
                       rel="noopener noreferrer"
                       className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                       style={{
-                        transform: `rotate(${angle}deg) translateX(170px) rotate(-${angle}deg)`,
+                        transform: `rotate(${angle}deg) translateX(170px) rotate(-${angle}deg)`
+
                       }}
                     >
                       <motion.div
                         whileHover={{ scale: 1.5, rotate: 360 }}
                         transition={{ type: 'spring', stiffness: 400, damping: 15 }}
-                        className={`w-16 h-16 sm:w-20 sm:h-20 bg-[#112240]/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-2xl ring-2 ring-slate-700 hover:ring-4 hover:ring-offset-4 hover:ring-offset-[#0a192f]/50 transition-all duration-500 ${item.color} ${item.hoverBg}`}
+                       className={`orbit-icon w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center transition-all duration-500 ${item.color}`}
                       >
                         {React.cloneElement(item.icon, { size: 32 })}
                       </motion.div>
@@ -162,7 +161,7 @@ const Connect = () => {
             className="space-y-6"
           >
             <div>
-              <label className="block text-sm font-semibold text-[#ccd6f6] mb-2">
+              <label className="block text-s font-semibold text-black mb-2">
                 Your Name
               </label>
               <input
@@ -172,12 +171,12 @@ const Connect = () => {
                 onChange={handleChange}
                 required
                 placeholder="John Doe"
-                className="w-full bg-[#112240] border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-[#8892b0] focus:outline-none focus:ring-2 focus:ring-[#64ffda] transition-all"
+                className="w-full bg-white border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-[#8892b0] focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-[#ccd6f6] mb-2">
+              <label className="block text-s font-semibold text-black mb-2">
                 Your Email
               </label>
               <input
@@ -187,12 +186,12 @@ const Connect = () => {
                 onChange={handleChange}
                 required
                 placeholder="john@example.com"
-                className="w-full bg-[#112240] border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-[#8892b0] focus:outline-none focus:ring-2 focus:ring-[#64ffda] transition-all"
+                className="w-full bg-white border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-[#8892b0] focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-[#ccd6f6] mb-2">
+              <label className="block text-s font-semibold text-black mb-2">
                 Message
               </label>
               <textarea
@@ -202,8 +201,8 @@ const Connect = () => {
                 required
                 rows={5}
                 placeholder="Hey Yemani! I'd love to work together..."
-                className="w-full bg-[#112240] border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-[#8892b0] focus:outline-none focus:ring-2 focus:ring-[#64ffda] transition-all resize-none"
-              />
+                className="w-full bg-white border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-[#8892b0] focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
+                />
             </div>
 
             <motion.button
@@ -211,7 +210,7 @@ const Connect = () => {
               disabled={status === 'Sending...'}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full bg-[#64ffda] text-[#0a192f] font-bold py-4 rounded-lg hover:bg-[#52e6c2] transition-all duration-300 shadow-lg text-lg"
+              className="w-full bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-lg text-lg"
             >
               {status === 'Sending...' ? 'Sending...' : 'Send Message'}
             </motion.button>
@@ -219,7 +218,7 @@ const Connect = () => {
             {status && !status.includes('Sending') && (
               <p
                 className={`text-center font-medium ${
-                  status.includes('Success') ? 'text-[#64ffda]' : 'text-red-400'
+                  status.includes('Success') ? 'text-[#64ffda]' : 'text-white'
                 }`}
               >
                 {status}
