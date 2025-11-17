@@ -7,14 +7,16 @@ import Hero from './components/Hero.jsx'
 import Projects from './components/Projects.jsx'  
 import Education from './components/Education.jsx'
 import Footer from './components/Footer.jsx'
+import Contact from './components/Contact.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Navbar />
     <div className="comtainer mx-auto px-4">  
       <Hero />
-      
+      <Education/>
       <Projects/>
+      <Contact/>
     </div>
     
   </StrictMode>,

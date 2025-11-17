@@ -30,3 +30,20 @@
     border-color: black;
   }
 }
+
+.orb-container {
+  animation: orbit 20s linear infinite;
+}
+
+.orb-item {
+  animation: orbit 20s linear infinite reverse;
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

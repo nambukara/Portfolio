@@ -134,3 +134,22 @@ export const listProyek = [
   },
   
 ];
+
+export const workData = [
+  {
+    role: "BSc (Hons) IT",
+    company: "SLIIT University",
+    duration: "2022 - Present",
+  },
+  {
+    role: "GCE A/L (Technology Stream)",
+    company: "Your School Name",
+    duration: "2019 - 2021",
+  },
+  {
+    role: "GCE O/L",
+    company: "Your School Name",
+    duration: "2018",
+  },
+];
+
