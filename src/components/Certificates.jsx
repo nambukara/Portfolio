@@ -1,49 +1,18 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiExternalLink, FiAward } from 'react-icons/fi';
-
-// Certificate images
-import cert1 from '/assets/Certifications/UC-4b536295-cc2b-4dcc-9f69-ba059bce751a.jpg';
-import cert2 from '/assets/Certifications/Front-End_Web_Development_E-Certificate_page-0001.jpg';
-import cert3 from '/assets/Certifications/Web_Design_for_Beginners_E-Certificate-1.png';
-
-const certificates = [
-  {
-    id: 1,
-    title: 'React - The Complete Guide',
-    issuer: 'Udemy | Maximilian Schwarzmüller',
-    date: 'March 2024',
-    image: cert1,
-    credentialUrl: 'https://ude.my/UC-abc123',
-  },
-  {
-    id: 2,
-    title: 'Node.js - The Complete Guide',
-    issuer: 'Udemy',
-    date: 'June 2024',
-    image: cert2,
-    credentialUrl: 'https://ude.my/UC-xyz789',
-  },
-  {
-    id: 3,
-    title: 'Node.js - The Complete Guide',
-    issuer: 'Udemy',
-    date: 'June 2024',
-    image: cert3,
-    credentialUrl: 'https://ude.my/UC-xyz789',
-  },
-  // Add more certificates here in the future
-];
+import { certificates } from "../data";   // FIXED: Import certificates properly
 
 const Certificates = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // Only take the first 2 certificates
+  // Only show first 2 certificates
   const displayedCertificates = certificates.slice(0, 2);
 
   return (
     <section id="certificates" className="pt-16 pb-24 page-background">
       <div className="container mx-auto px-4 sm:px-6">
+
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -59,7 +28,7 @@ const Certificates = () => {
           </p>
         </motion.div>
 
-        {/* Certificates Grid - Only first 2 */}
+        {/* Certificates Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {displayedCertificates.map((cert, index) => (
             <motion.div
@@ -84,10 +53,11 @@ const Certificates = () => {
                 />
               </div>
 
-              {/* Overlay Content */}
+              {/* Certificate Text */}
               <div className="p-6 space-y-3">
                 <div className="flex items-start justify-between">
                   <FiAward className="text-blue-600 text-2xl mt-1" />
+
                   {cert.credentialUrl !== '#' && (
                     <a
                       href={cert.credentialUrl}
@@ -101,17 +71,27 @@ const Certificates = () => {
                   )}
                 </div>
 
-                <h3 className="text-xl font-bold text-black group-hover:text-black transition-colors">
+                <h3 className="text-xl font-bold text-black">
                   {cert.title}
                 </h3>
                 <p className="text-[#8892b0] text-sm">{cert.issuer}</p>
                 <p className="text-blue-600 text-sm font-medium">{cert.date}</p>
               </div>
 
-              {/* Hover Glow Effect */}
+              {/* Hover Glow */}
               <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
             </motion.div>
           ))}
+        </div>
+
+        {/* View All Button */}
+        <div className="text-center mt-12">
+          <a
+            href="../certifications"
+            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+          >
+            View All Certificates
+          </a>
         </div>
       </div>
 
@@ -120,7 +100,6 @@ const Certificates = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
           onClick={() => setSelectedImage(null)}
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
         >
@@ -129,13 +108,12 @@ const Certificates = () => {
             alt="Certificate Full View"
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
-            exit={{ scale: 0.8 }}
             className="max-w-full max-h-full rounded-lg shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           />
           <button
             onClick={() => setSelectedImage(null)}
-            className="absolute top-6 right-6 text-white text-4xl font-light hover:text-[#64ffda] transition-colors"
+            className="absolute top-6 right-6 text-white text-4xl hover:text-[#64ffda]"
           >
             ×
           </button>
