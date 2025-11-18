@@ -27,7 +27,7 @@ const Projects = () => {
         ))}    
             </div>
             <div className="text-center mt-12">
-                <a href="#" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">View All Projects</a>
+                <a href="../myProject" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">View All Projects</a>
             </div>
         </div>
     </>

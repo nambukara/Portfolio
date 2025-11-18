@@ -3,8 +3,9 @@ import { motion } from 'framer-motion';
 import { FiExternalLink, FiAward } from 'react-icons/fi';
 
 // Replace these with your actual certificate image paths (public folder or imported)
-import cert1 from '/assets/proyek/proyek1.webp';
-import cert2 from '/assets/proyek/proyek1.webp';
+import cert1 from '/assets/Certifications/UC-4b536295-cc2b-4dcc-9f69-ba059bce751a.jpg';
+import cert2 from '/assets/Certifications/Front-End_Web_Development_E-Certificate_page-0001.jpg';
+import cert3 from '/assets/Certifications/Web_Design_for_Beginners_E-Certificate-1.png';
 
 
 const certificates = [
@@ -24,6 +25,14 @@ const certificates = [
     image: cert2,
     credentialUrl: 'https://ude.my/UC-xyz789',
   },
+  {
+    id: 3,
+    title: 'Node.js - The Complete Guide',
+    issuer: 'Udemy',
+    date: 'June 2024',
+    image: cert3,
+    credentialUrl: 'https://ude.my/UC-xyz789',
+  },
   
 ];
 
@@ -31,7 +40,7 @@ const Certificates = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <section id="certificates" className="pt-16 pb-24 page-background text-white">
+    <section id="certificates" className="pt-16 pb-24 page-background">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
@@ -40,8 +49,8 @@ const Certificates = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Certifications & <span className="text-[#64ffda]">Achievements</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            Certifications & <span className="text-blue-600">Achievements</span>
           </h2>
           <p className="text-[#8892b0] text-lg max-w-2xl mx-auto">
             Verified credentials that prove my commitment to continuous learning
@@ -76,13 +85,13 @@ const Certificates = () => {
               {/* Overlay Content */}
               <div className="p-6 space-y-3">
                 <div className="flex items-start justify-between">
-                  <FiAward className="text-[#64ffda] text-2xl mt-1" />
+                  <FiAward className="text-blue-600 text-2xl mt-1" />
                   {cert.credentialUrl !== '#' && (
                     <a
                       href={cert.credentialUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#64ffda] hover:text-white transition-colors"
+                      className="text-blue-600 hover:text-white transition-colors"
                       onClick={(e) => e.stopPropagation()}
                     >
                       <FiExternalLink size={20} />
@@ -90,19 +99,19 @@ const Certificates = () => {
                   )}
                 </div>
 
-                <h3 className="text-xl font-bold text-[#ccd6f6] group-hover:text-white transition-colors">
+                <h3 className="text-xl font-bold text-black group-hover:text-black transition-colors">
                   {cert.title}
                 </h3>
-                <p className="text-[#8892b0] text-sm leading-relaxed">
+                <p className="text-[#8892b0] text-sm ">
                   {cert.issuer}
                 </p>
-                <p className="text-[#64ffda] text-sm font-medium">
+                <p className="text-blue-600 text-sm font-medium">
                   {cert.date}
                 </p>
               </div>
 
               {/* Hover Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#64ffda]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
             </motion.div>
           ))}
         </div>
