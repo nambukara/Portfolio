@@ -16,35 +16,35 @@ const contactData = [
   {
     icon: <FaGithub />,
     title: 'GitHub',
-    href: 'https://github.com/WAPunsisiYemaniPerera',
+    href: 'https://github.com/nambukara',
     color: 'text-black',
     hoverBg: 'hover:bg-black/20',
   },
   {
     icon: <FaLinkedin />,
     title: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/yemani-perera-09b4b8211',
+    href: 'https://www.linkedin.com/in/thisen-nambukara-02464323b/',
     color: 'text-[#0A66C2]',
     hoverBg: 'hover:bg-[#0A66C2]/20',
   },
   {
     icon: <FaInstagram />,
     title: 'Instagram',
-    href: 'https://www.instagram.com/yemaa_perera?igsh=MTViMDI3MXQ2Z3Q1Mg==',
+    href: 'https://www.instagram.com/thisen_nambukara/',
     color: 'text-[#E4405F]',
     hoverBg: 'hover:bg-[#E4405F]/20',
   },
   {
     icon: <FiMail />,
     title: 'Email',
-    href: 'mailto:punsisiyemani18@gmail.com',
+    href: 'mailto:thisennambukara@gmail.com',
     color: 'text-[#FF0000]',
     hoverBg: 'hover:bg-[#64ffda]/20',
   },
   {
     icon: <FaFacebook />,
     title: 'Facebook',
-    href: '#',
+    href: 'https://web.facebook.com/thisen.melaka.1',
     color: 'text-[#1877F2]',
     hoverBg: 'hover:bg-[#1877F2]/20',
   },
@@ -58,7 +58,7 @@ const contactData = [
   {
     icon: <FaYoutube />,
     title: 'YouTube',
-    href: '#',
+    href: 'https://www.youtube.com/@ThisenNambukara',
     color: 'text-[#FF0000]',
     hoverBg: 'hover:bg-[#FF0000]/20',
   },
@@ -171,7 +171,7 @@ const Connect = () => {
                 onChange={handleChange}
                 required
                 placeholder="John Doe"
-                className="w-full bg-white border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-[#8892b0] focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
+                className="w-full bg-white border border-slate-700 rounded-lg px-4 py-3 text-black placeholder-[#8892b0] focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
               />
             </div>
 
@@ -186,7 +186,7 @@ const Connect = () => {
                 onChange={handleChange}
                 required
                 placeholder="john@example.com"
-                className="w-full bg-white border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-[#8892b0] focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
+                className="w-full bg-white border border-slate-700 rounded-lg px-4 py-3 text-black placeholder-[#8892b0] focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
               />
             </div>
 
@@ -201,7 +201,7 @@ const Connect = () => {
                 required
                 rows={5}
                 placeholder="Hey Yemani! I'd love to work together..."
-                className="w-full bg-white border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-[#8892b0] focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
+                className="w-full bg-white border border-slate-700 rounded-lg px-4 py-3 text-black placeholder-[#8892b0] focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
                 />
             </div>
 
@@ -218,7 +218,7 @@ const Connect = () => {
             {status && !status.includes('Sending') && (
               <p
                 className={`text-center font-medium ${
-                  status.includes('Success') ? 'text-[#64ffda]' : 'text-white'
+                  status.includes('Success') ? 'text-[#64ffda]' : 'text-black'
                 }`}
               >
                 {status}

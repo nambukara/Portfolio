@@ -102,7 +102,7 @@ export const listTools = [
   },
 ];
 
-import Proyek1 from "/assets/proyek/proyek1.webp";
+import Proyek1 from "/assets/proyek/proyek1.png";
 import Proyek2 from "/assets/proyek/proyek2.jpeg";
 import Proyek3 from "/assets/proyek/proyek3.png";
 
