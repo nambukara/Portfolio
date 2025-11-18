@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import Navbar from './components/Navbar.jsx'
 
-import Projects from './components/Projects.jsx'  
+import Projects from './Pages/Projects.jsx'  
 
 import Footer from './components/Footer.jsx'
 
