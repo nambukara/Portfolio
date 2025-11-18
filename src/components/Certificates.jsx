@@ -7,7 +7,7 @@ const Certificates = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   // Only show first 2 certificates
-  const displayedCertificates = certificates.slice(0, 2);
+  const displayedCertificates = certificates.slice(0, 3);
 
   return (
     <section id="certificates" className="pt-16 pb-24 page-background">

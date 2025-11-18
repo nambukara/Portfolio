@@ -1,40 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiExternalLink, FiAward } from 'react-icons/fi';
-
-// Replace these with your actual certificate image paths (public folder or imported)
-import cert1 from '/assets/Certifications/UC-4b536295-cc2b-4dcc-9f69-ba059bce751a.jpg';
-import cert2 from '/assets/Certifications/Front-End_Web_Development_E-Certificate_page-0001.jpg';
-import cert3 from '/assets/Certifications/Web_Design_for_Beginners_E-Certificate-1.png';
+import { certificates } from "../data"; 
 
 
-const certificates = [
-  {
-    id: 1,
-    title: 'React - The Complete Guide',
-    issuer: 'Udemy | Maximilian Schwarzmüller',
-    date: 'March 2024',
-    image: cert1,
-    credentialUrl: 'https://ude.my/UC-abc123',
-  },
-  {
-    id: 2,
-    title: 'Node.js - The Complete Guide',
-    issuer: 'Udemy',
-    date: 'June 2024',
-    image: cert2,
-    credentialUrl: 'https://ude.my/UC-xyz789',
-  },
-  {
-    id: 3,
-    title: 'Node.js - The Complete Guide',
-    issuer: 'Udemy',
-    date: 'June 2024',
-    image: cert3,
-    credentialUrl: 'https://ude.my/UC-xyz789',
-  },
-  
-];
 
 const Certificates = () => {
   const [selectedImage, setSelectedImage] = useState(null);
