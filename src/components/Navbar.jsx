@@ -20,12 +20,12 @@ const Navbar = () => {
   const closeMenu = () => setShowMenu(false);
 
   const navLinks = [
-    { name: "Home", href: "#hero" },
-    { name: "About", href: "#education" },
-    { name: "Projects", href: "#projects" },
-    { name: "Skills", href: "#skills" },
-    { name: "Certificates", href: "#certificates" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: ".#hero" },
+    { name: "Education", href: ".#education" },
+    { name: "Projects", href: ".#projects" },
+    { name: "Skills", href: ".#skills" },
+    { name: "Certificates", href: ".#certificates" },
+    { name: "Contact", href: ".#contact" },
   ];
 
   return (

@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiExternalLink, FiAward } from 'react-icons/fi';
 
-// Certificate images
+// Replace these with your actual certificate image paths (public folder or imported)
 import cert1 from '/assets/Certifications/UC-4b536295-cc2b-4dcc-9f69-ba059bce751a.jpg';
 import cert2 from '/assets/Certifications/Front-End_Web_Development_E-Certificate_page-0001.jpg';
 import cert3 from '/assets/Certifications/Web_Design_for_Beginners_E-Certificate-1.png';
+
 
 const certificates = [
   {
@@ -32,17 +33,14 @@ const certificates = [
     image: cert3,
     credentialUrl: 'https://ude.my/UC-xyz789',
   },
-  // Add more certificates here in the future
+  
 ];
 
 const Certificates = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // Only take the first 2 certificates
-  const displayedCertificates = certificates.slice(0, 2);
-
   return (
-    <section id="certificates" className="pt-16 pb-24 page-background">
+    <section id="certificates" className="pt-26 pb-24 page-background">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
@@ -59,9 +57,9 @@ const Certificates = () => {
           </p>
         </motion.div>
 
-        {/* Certificates Grid - Only first 2 */}
+        {/* Certificates Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {displayedCertificates.map((cert, index) => (
+          {certificates.map((cert, index) => (
             <motion.div
               key={cert.id}
               initial={{ opacity: 0, y: 30 }}
@@ -104,8 +102,12 @@ const Certificates = () => {
                 <h3 className="text-xl font-bold text-black group-hover:text-black transition-colors">
                   {cert.title}
                 </h3>
-                <p className="text-[#8892b0] text-sm">{cert.issuer}</p>
-                <p className="text-blue-600 text-sm font-medium">{cert.date}</p>
+                <p className="text-[#8892b0] text-sm ">
+                  {cert.issuer}
+                </p>
+                <p className="text-blue-600 text-sm font-medium">
+                  {cert.date}
+                </p>
               </div>
 
               {/* Hover Glow Effect */}
