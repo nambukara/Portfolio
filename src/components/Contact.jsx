@@ -113,7 +113,7 @@ const Connect = () => {
             <div className="relative w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] lg:w-[440px] lg:h-[440px] group">
              
               {/* Static Logo in Center */}
-              <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+              <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none ">
                 <img
                   src={DataImage.Logo}
                   alt="Yemani Perera"

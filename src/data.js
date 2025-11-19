@@ -55,6 +55,10 @@ export const listProyek = [
     sourcecode: "https://github.com/nambukara/Ceylon_Safari",
   },
 ];
+
+
+
+
 {/*Certificates*/}
 import cert1 from '/assets/Certifications/UC-4b536295-cc2b-4dcc-9f69-ba059bce751a.jpg';
 import cert2 from '/assets/Certifications/Front-End_Web_Development_E-Certificate_page-0001.jpg';

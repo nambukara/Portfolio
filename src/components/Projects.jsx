@@ -13,7 +13,7 @@ const Projects = () => {
         My<span className="text-blue-600"> Projects</span>
       </h2>
 
-      <p className="text-center text-gray-600 max-w-2xl mx-auto mb-16 text-lg">
+      <p className="text-center text-gray-600 max-w-2xl mx-auto mb-6 text-lg">
         A selection of my recent work
       </p>
 
