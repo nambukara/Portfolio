@@ -47,7 +47,7 @@ export const listProyek = [
   },
   {
     id: 4,
-    gambar: Proyek3,
+    gambar: Proyek4,
     nama: "Ceylon Safari! 🐘🚙",
     desk: "A full-stack web platform developed to streamline wildlife safari tour management in Sri Lanka.",
     tools: ["HTML", "Javascript", "Java", "TailwindCSS", "sql server"],

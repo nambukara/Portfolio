@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+ import { FaJava } from 'react-icons/fa';
 import {
   SiReact,
   SiTailwindcss,
@@ -7,6 +8,12 @@ import {
   SiGit,
   SiFigma,
   SiJavascript,
+  SiHtml5,
+  SiCss3,
+  SiMysql,
+  SiPhp,SiBootstrap,
+  SiGithub
+
  
   
 
@@ -16,23 +23,27 @@ import {
 const allSkills = [
   // Frontend
   { name: 'React', icon: <SiReact className="text-[#61DAFB]" />, category: 'frontend' },
-
-  
   { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-[#06B6D4]" />, category: 'frontend' },
+  { name: 'HTML5', icon: <SiHtml5 className="text-[#E34F26]" />, category: 'frontend' },
+  { name: 'CSS3', icon: <SiCss3 className="text-[#1572B6]" />, category: 'frontend' },
+  { name: 'Bootstrap', icon: <SiBootstrap className="text-[#7952B3]" />, category: 'frontend' },
  
 
   // Backend
+  { name: 'Java', icon: <FaJava className="text-[#007396]" />, category: 'backend' },
+  { name: 'MySQL', icon: <SiMysql className="text-[#4479A1]" />, category: 'backend' },
+  { name: 'PHP', icon: <SiPhp className="text-[#777BB4]" />, category: 'backend' },
+  { name: 'JavaScript', icon: <SiJavascript className="text-[#F7DF1E]" />, category: 'tools' },
   
-
   // ML / AI
   { name: 'Python', icon: <SiPython className="text-[#3776AB]" />, category: 'ml' },
  
 
   // Tools
+  { name: 'GitHub', icon: <SiGithub className="text-[#181717]" />, category: 'tools' },
   { name: 'Git', icon: <SiGit className="text-[#F05032]" />, category: 'tools' },
- 
   { name: 'Figma', icon: <SiFigma className="text-[#F24E1E]" />, category: 'tools' },
-  { name: 'JavaScript', icon: <SiJavascript className="text-[#F7DF1E]" />, category: 'tools' },
+  
 ];
 
 const filters = [
