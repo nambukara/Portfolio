@@ -15,7 +15,6 @@ import Certificates from './components/Certificates.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
    
-    <Navbar />
     <div className="comtainer mx-auto px-4">  
       <break />
       
