@@ -23,9 +23,9 @@ export const listProyek = [
   {
     id: 1,
     gambar: Proyek1,
-    nama: "Website Sekolah",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["HTML", "CSS", "Javascript", "AOS"],
+    nama: "Portfolio",
+    desk: "A clean, responsive site that highlights my skills, projects, education, and journey, with an easy-to-use contact section",
+    tools: ["React", "Tailwind CSS"],
     dad: "200",
   },
   {
@@ -33,7 +33,7 @@ export const listProyek = [
     gambar: Proyek2,
     nama: "ApolloCabs",
     desk: "ApolloCabs is a fully functional online taxi and cab booking platform built entirely with Java OOP principles.",
-    tools: ["HTML", "CSS", "Javascript", "Java", ],
+    tools: ["HTML", "CSS", "Javascript", "Java","servlet" ],
     dad: "300",
     sourcecode: "https://github.com/Hasanga910/ApolloCabs",
   },
@@ -53,7 +53,7 @@ export const listProyek = [
     desk: " Automated Hhealthcare monitoring system through a wearable device on a wrist which focused on measuring both mental and physical health condition of patients.",
     tools: ["C++","HTML", "Javascript",  "CSS", "My sql"],
     dad: "400",
-    sourcecode: "https://github.com/nambukara/Ceylon_Safari",
+    sourcecode: "https://github.com/nambukara/Automated-Healthcare-Monitoring-System",
   },
   {
     id: 5,
@@ -62,7 +62,7 @@ export const listProyek = [
     desk: "Java-based Blood type compatibility checking system developed to support life-saving decisions in critical medical scenarios.",
     tools: ["Java"],
     dad: "400",
-    sourcecode: "https://github.com/nambukara/Ceylon_Safari",
+    sourcecode: "https://github.com/nambukara/LIFORA",
   },
 ];
 

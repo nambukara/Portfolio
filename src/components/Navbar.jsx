@@ -65,7 +65,7 @@ const Navbar = () => {
 
       {/* Mobile Full-Screen Menu – Completely hidden until hamburger is clicked */}
       {showMenu && (
-        <div className="fixed inset-0 bg-gradient-to-b from-blue-600 to-purple-800 z-40 flex flex-col items-center justify-center gap-10 text-white">
+        <div className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-10 text-black">
           {navLinks.map(link => (
             <a
               key={link.name}
