@@ -19,7 +19,10 @@ createRoot(document.getElementById('root')).render(
     <div className="comtainer mx-auto px-4">  
       <break />
       
-      <Contact/>
+      <Education/>
+      
+      <Skills/>
+      
     </div>
     <Footer/>
   </StrictMode>,
