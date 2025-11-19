@@ -1,10 +1,10 @@
-import HeroImage from "/assets/DP.jpeg";
+import HeroImage from "./assets/DP.jpeg";
 
 const Image = {
   HeroImage,
 };
 
-import Logo from "/assets/logo/1.png";
+import Logo from "./assets/logo/1.png";
 
 Image.Logo = Logo;
 
@@ -12,11 +12,11 @@ export default Image;
 
 
 {/*Projects*/}
-import Proyek1 from "/assets/proyek/proyek1.png";
-import Proyek2 from "/assets/proyek/proyek2.jpeg";
-import Proyek3 from "/assets/proyek/proyek3.png";
-import Proyek4 from "/assets/proyek/1751027808122.jpg";
-import Proyek5 from "/assets/proyek/1751028177653.jpg";
+import Proyek1 from "./assets/proyek/proyek1.png";
+import Proyek2 from "./assets/proyek/proyek2.jpeg";
+import Proyek3 from "./assets/proyek/proyek3.png";
+import Proyek4 from "./assets/proyek/1751027808122.jpg";
+import Proyek5 from "./assets/proyek/1751028177653.jpg";
 
 
 export const listProyek = [
@@ -70,12 +70,12 @@ export const listProyek = [
 
 
 {/*Certificates*/}
-import cert1 from '/assets/Certifications/UC-4b536295-cc2b-4dcc-9f69-ba059bce751a.jpg';
-import cert2 from '/assets/Certifications/Front-End_Web_Development_E-Certificate_page-0001.jpg';
-import cert3 from '/assets/Certifications/Web_Design_for_Beginners_E-Certificate-1.png';
-import cert4 from '/assets/Certifications/Python_for_Beginners_E-Certificate_page-0001.jpg';
-import cert5 from '/assets/Certifications/1751731062003.jpg';
-import cert6 from '/assets/Certifications/OOP Java-1.png';
+import cert1 from './assets/Certifications/UC-4b536295-cc2b-4dcc-9f69-ba059bce751a.jpg';
+import cert2 from './assets/Certifications/Front-End_Web_Development_E-Certificate_page-0001.jpg';
+import cert3 from './assets/Certifications/Web_Design_for_Beginners_E-Certificate-1.png';
+import cert4 from './assets/Certifications/Python_for_Beginners_E-Certificate_page-0001.jpg';
+import cert5 from './assets/Certifications/1751731062003.jpg';
+import cert6 from './assets/Certifications/OOP Java-1.png';
 
 export const certificates = [
   {
