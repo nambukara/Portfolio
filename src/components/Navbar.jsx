@@ -31,7 +31,7 @@ const Navbar = () => {
   return (
     <>
       {/* Fixed Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-md py-4 px-6">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-md py-3 px-4">
         <div className="container mx-auto flex justify-between items-center">
           {/* Logo */}
           <a href="#hero">

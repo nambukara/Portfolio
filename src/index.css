@@ -103,3 +103,22 @@ body.mobile-menu-open .fixed.inset-0.z-40 {
     transform: rotate(-360deg);
   }
 }
+
+
+
+/* Center ALL content perfectly on mobile */
+@layer components {
+  .mobile-center * {
+    @apply text-center;
+  }
+  
+  .mobile-center h1,
+  .mobile-center h2,
+  .mobile-center h3,
+  .mobile-center h4,
+  .mobile-center p,
+  .mobile-center li,
+  .mobile-center div {
+    @apply mx-auto max-w-full;
+  }
+}

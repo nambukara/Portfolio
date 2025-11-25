@@ -61,7 +61,7 @@ const Hero = () => {
           <img
             src={DataImage.HeroImage}
             alt="Thisen Nambukara"
-            className="w-[500px] md:ml-auto mx-auto  md:mt-0"
+            className="w-[600px] md:ml-auto mx-auto  md:mt-0"
           />
         </motion.div>
       </div>

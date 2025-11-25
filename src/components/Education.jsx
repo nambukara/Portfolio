@@ -48,7 +48,7 @@ const About = () => {
               >
                 {/* ---------- MOBILE / TABLET (stacked) ---------- */}
                 <div className="md:hidden">
-                  <div className="bg-white/5 backdrop-blur-md p-5 sm:p-6 rounded-lg ring-1 ring-white/10 shadow-lg hover:ring-[#64ffda]/50 transition-all duration-300">
+                  <div className="bg-white/5 backdrop-blur-md p-5 sm:p-6 rounded-lg ring-1 ring-white/10 shadow-lg hover:to-blue-600/50 transition-all duration-300">
                     <div className="flex items-center gap-3 mb-2">
                       <div className="w-3 h-3 rounded-full bg-blue-600 border-2 border-[#112240]" />
                       <p className="text-blue-600 font-semibold text-sm">{item.year}</p>

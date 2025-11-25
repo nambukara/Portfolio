@@ -64,7 +64,7 @@ const Skills = () => {
 
   return (
     <section id="skills" className="pt-16 pb-24 page-background">
-      <div className="container mx-auto px-4 sm:px-6">
+      <div className="container mx-auto px-4 sm:px-auto">
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

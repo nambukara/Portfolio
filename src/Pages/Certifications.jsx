@@ -5,6 +5,7 @@ import { certificates } from "../data";
 
 
 
+
 const Certificates = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
