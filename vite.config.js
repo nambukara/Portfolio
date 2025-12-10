@@ -6,4 +6,13 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: "/",
+  build: {
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        project: 'myProject.html', // Add your new file here
+        // certifications: 'certifications.html' // You likely need this one too!
+      },
+    },
+  },
 })
